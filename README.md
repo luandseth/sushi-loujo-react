@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Sushi Loujo E-commerce with React & Firebase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a course project of Coderhouse React.js. 
 
 ## Available Scripts
 
