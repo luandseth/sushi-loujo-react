@@ -1,18 +1,38 @@
-import React from 'react'
-import styled from 'styled-components'
-import ItemCount from './ItemCount'
+import React, {useEffect, useState} from 'react';
+import styled from 'styled-components';
+import ItemList from './ItemList';
+import getItems from '../items';
 
-function ItemListContainer({greetings}) {
 
-    const StyledText = styled.p`
-        color: #000;
-    `
+const ItemListBoxContainer = styled.div`
+        margin: 0 auto;
+        padding: 20px 50px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+`
+
+
+function ItemListContainer() {
+
+    const [listProduct, setListProduct] = useState([]);
+
+    useEffect(() => {
+        const list = getItems()
+
+        list.then(response => {
+            setListProduct(response);
+        })
+    }, [])
+
+
     return (
-        <div className="mx-auto p-3" style={{width: "400px"}}> 
+        <ItemListBoxContainer> 
             <h1>Sushi Loujo</h1>
-            <StyledText>{greetings}</StyledText>
-            <ItemCount stock={5} initial={0} />
-        </div>
+            <ItemList items={listProduct}/>
+        </ItemListBoxContainer>
     )
 }
 
