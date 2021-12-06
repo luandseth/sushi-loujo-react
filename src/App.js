@@ -1,3 +1,4 @@
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar"
 
@@ -10,7 +11,8 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
-      <ItemListContainer greetings={text} />
+      {/* <ItemListContainer greetings={text} /> */}
+      <ItemDetailContainer />
     </div>
   );
 }

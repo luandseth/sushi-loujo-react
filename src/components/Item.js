@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const BoxContainer = styled.div`
-  width: 100%;
-`
 
 const StyledLi = styled.li`
     border: 1px inset #000;

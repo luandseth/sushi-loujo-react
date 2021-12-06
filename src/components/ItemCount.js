@@ -6,15 +6,17 @@ const BoxContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;  
-    align-items: center;
+    align-items: baseline;
 
-    padding: 10px 5px;
+    width: 300px;
+    height: 45px;
 
-    border: 1px solid gray;
+    padding: 5px 5px;
+
 `
 
 const CounterText = styled.p`
-    font-size: 26px
+    font-size: 16px
 `
 
 
@@ -57,9 +59,10 @@ function ItemCount({stock,initial}) {
 
     return (
         <BoxContainer>
-            <buton onClick={() => subCounter()}><img src={`https://icongr.am/entypo/minus.svg?size=30&color=000000`} alt="resta-icono" /></buton>
+            <button onClick={() => subCounter()}><img src={`https://icongr.am/entypo/minus.svg?size=16&color=000000`} alt="resta-icono" /></button>
             <CounterText>{number}</CounterText>
-            <buton onClick={() => addCounter()}><img src={`https://icongr.am/clarity/add.svg?size=30&color=000000`} alt="suma-icono"/></buton>
+            <button onClick={() => addCounter()}><img src={`https://icongr.am/clarity/add.svg?size=16&color=000000`} alt="suma-icono"/></button>
+            <button>Agregar al carrito</button>
         </BoxContainer>
     )
 }
