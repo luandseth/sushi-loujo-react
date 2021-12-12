@@ -23,7 +23,18 @@ const StyledImage = styled.img`
     height: 250px;
 `
 
+const Anchor = styled.a`
+text-decoration: none;
+color: #000;
 
+&&:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+`
 
 
 function Item({ key, title, description,price, image, imageDescription, stock }) {
@@ -35,7 +46,7 @@ function Item({ key, title, description,price, image, imageDescription, stock })
                 <Description>{description}</Description>
                 <StyledImage alt={imageDescription} src={image} />
                 <p>{price}</p>
-                <button>Ver más</button>
+                <button><Anchor href="/item/:id">Ver Más</Anchor></button>
             </StyledLi> 
         </>
     )

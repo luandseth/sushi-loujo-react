@@ -9,7 +9,7 @@ function getItems(){
                 price:"$350",
                 img_url:'https://sushiloujo.com.ar/resources/img/roll.jpg',
                 img_description:'Sushi-rolls',
-                stock:10
+                stock:10,
             },
             {
                 id:'2',
@@ -18,7 +18,7 @@ function getItems(){
                 price:"$400",
                 img_url:'https://sushiloujo.com.ar/resources/img/maki-veggie.jpg',
                 img_description:'Sushi-maki',
-                stock:12
+                stock:12,
             },
             {
                 id:'3',
@@ -27,10 +27,10 @@ function getItems(){
                 price:"$500",
                 img_url:'https://sushiloujo.com.ar/resources/img/hot-roll.jpg',
                 img_description:'Sushi-Hot-Roll',
-                stock:10
+                stock:10,
             },
         ]
-        setTimeout(() => resolve(object), 3000)
+        setTimeout(() => resolve(object), 1500)
     })
 }
 

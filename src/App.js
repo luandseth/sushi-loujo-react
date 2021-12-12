@@ -1,19 +1,22 @@
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar"
 
 function App() {
 
-  let text = "Este es el texto para mi componente ItemListContainer pasado como props. Greetings!";
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
-      {/* <ItemListContainer greetings={text} /> */}
-      <ItemDetailContainer />
-    </div>
+    <>
+      <Router>
+        <NavBar/>
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer/>}/>
+          <Route exact path="/category/:categoryId" element={<ItemListContainer/>}/>
+          <Route exact path="/item/:id" element={<ItemDetailContainer/>}/>
+          <Route path="*" element={<div>NOT FOUND</div>}/>
+        </Routes>
+      </Router>
+    </>
   );
 }
 

@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/#">
+        <a className="navbar-brand" href="/">
           <img src="/assets/images/icons8-sushi-100.png" alt="logo" width="30" height="24" />
         </a>
         <button
@@ -22,17 +22,17 @@ function NavBar() {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/#">
+              <a className="nav-link active" aria-current="page" href="/">
                 Inicio
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/#">
+              <a className="nav-link" href="/category/:categoryId">
                 Productos
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/#">
+              <a className="nav-link" href="/category/:categoryId">
                 Delivery
               </a>
             </li>

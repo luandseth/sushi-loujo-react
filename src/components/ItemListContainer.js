@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, } from 'react';
 import styled from 'styled-components';
 import ItemList from './ItemList';
 import getItems from '../items';
@@ -17,7 +17,19 @@ const ItemListBoxContainer = styled.div`
 
 function ItemListContainer() {
 
+    //const {categoryId} = useParams();
     const [listProduct, setListProduct] = useState([]);
+
+
+    /* ( async () => {
+        if(categoryId !== undefined){
+            const products = await getProductsById(categoryId);
+            setListProduct(products);
+        } else {
+            const products = await getItems();
+            setListProduct(products);
+        } 
+    }) */
 
     useEffect(() => {
         const list = getItems()

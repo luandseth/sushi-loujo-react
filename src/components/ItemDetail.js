@@ -43,7 +43,7 @@ function ItemDetail({ productDetail }) {
       <StyledHeading>{productDetail[0].name}</StyledHeading>
       <StyledParagraph>{productDetail[0].price}</StyledParagraph>
       <StyledParagraph>8 piezas de sushi en formato roll (arroz por fuera alga nori por dentro).</StyledParagraph>
-      <ItemCount stock={productDetail[0].stock} initial={1} />
+      <ItemCount stock={productDetail[0].stock} initial={0} />
       <StyledButton>Volver</StyledButton>
       <StyledParagraphBox> {`${productDetail[0].stock} unidades restantes`}</StyledParagraphBox>
     </BoxContainer>
