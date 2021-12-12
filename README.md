@@ -1,6 +1,15 @@
 # Sushi Loujo E-commerce with React & Firebase
 
-This project is a course project of Coderhouse React.js. 
+This project is a course project of Coderhouse React.js.
+
+## Libraries used
+In this project I am using:
+-React
+-React-router
+-Styled-components
+-Bootstrap
+
+Beyond the most used libraries
 
 ## Available Scripts
 
