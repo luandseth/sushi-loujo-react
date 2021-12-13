@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { RoutesContext } from '../App';
 import styled from 'styled-components';
 
 
@@ -37,16 +38,18 @@ color: #000;
 `
 
 
-function Item({ key, title, description,price, image, imageDescription, stock }) {
-
+function Item({id, title, description,price, image, imageDescription}) {
+    
+    const { value, setValue} = useContext(RoutesContext);
+    console.log("Item V", value)
     return (
         <>
-            <StyledLi key={key}>
+            <StyledLi key={id}>
                 <h2>{title}</h2>
                 <Description>{description}</Description>
                 <StyledImage alt={imageDescription} src={image} />
                 <p>{price}</p>
-                <button><Anchor href="/item/:id">Ver Más</Anchor></button>
+                <button onClick={() => setValue(id)}><Anchor href={`/item/${id}`} >Ver Más</Anchor></button>
             </StyledLi> 
         </>
     )

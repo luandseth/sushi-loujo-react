@@ -36,16 +36,15 @@ const StyledButton = styled.button`
 function ItemDetail({ productDetail }) {
 
 
-
   return (
-    <BoxContainer>
-      <Image src={productDetail[0].img_url} alt={productDetail[0].img_description}/>
-      <StyledHeading>{productDetail[0].name}</StyledHeading>
-      <StyledParagraph>{productDetail[0].price}</StyledParagraph>
-      <StyledParagraph>8 piezas de sushi en formato roll (arroz por fuera alga nori por dentro).</StyledParagraph>
-      <ItemCount stock={productDetail[0].stock} initial={0} />
+    <BoxContainer key={productDetail.categoryId}>
+      <Image src={productDetail.img_url} alt={productDetail.img_description}/>
+      <StyledHeading>{productDetail.name}</StyledHeading>
+      <StyledParagraph>{productDetail.price}</StyledParagraph>
+      <StyledParagraph>{productDetail.description}</StyledParagraph>
+      <ItemCount stock={productDetail.stock} initial={0} />
       <StyledButton>Volver</StyledButton>
-      <StyledParagraphBox> {`${productDetail[0].stock} unidades restantes`}</StyledParagraphBox>
+      <StyledParagraphBox> {`${productDetail.stock} unidades restantes`}</StyledParagraphBox>
     </BoxContainer>
   );
 }

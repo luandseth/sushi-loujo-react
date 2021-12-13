@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
+import { RoutesContext } from '../App';
 import styled from 'styled-components';
 import ItemDetail from './ItemDetail';
-import getItems from '../items';
+import {getItem} from '../items';
 
 
 const ItemBoxContainer = styled.article`
@@ -19,9 +20,12 @@ function ItemDetailContainer() {
 
     const [productDetail, setProductDetail] = useState([]);
 
-    useEffect(() => {
-        const list = getItems()
+    const { value, setValue} = useContext(RoutesContext);
 
+    console.log("detail V", value)
+    useEffect(() => {
+        const list = getItem(value)
+        
         list.then(response => {
             setProductDetail(response);
         })
@@ -34,4 +38,4 @@ function ItemDetailContainer() {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

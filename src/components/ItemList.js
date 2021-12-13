@@ -21,18 +21,20 @@ const StyledUl = styled.ul`
 
 
 function ItemList({ items }) {
+
+
   return (
     <BoxContainer>
       <StyledUl>
         {items.map((item) => 
         <Item
-            key={item.id}
+            id={item.categoryId}
+            key={item.categoryId}
             title={item.name}
             description={item.description}
             price={item.price}
             image={item.img_url}
             imageDescription={item.img_description}
-            stock={item.stock}
           />
         )}
       </StyledUl>
