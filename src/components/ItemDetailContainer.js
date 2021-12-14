@@ -1,5 +1,5 @@
-import React, {useEffect, useState, useContext} from 'react';
-import { RoutesContext } from '../App';
+import React, {useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import ItemDetail from './ItemDetail';
 import {getItem} from '../items';
@@ -20,16 +20,19 @@ function ItemDetailContainer() {
 
     const [productDetail, setProductDetail] = useState([]);
 
-    const { value, setValue} = useContext(RoutesContext);
+    const {id} = useParams();
+    
+    console.log("ID", id)
 
-    console.log("detail V", value)
     useEffect(() => {
-        const list = getItem(value)
+        const item = getItem(id)
         
-        list.then(response => {
-            setProductDetail(response);
+        item.then(data => {
+            setProductDetail(data);
         })
-    }, [])
+    }, [id]);
+
+    console.log("PRODUCT", productDetail)
 
     return (
         <ItemBoxContainer>

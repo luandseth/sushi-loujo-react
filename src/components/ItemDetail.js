@@ -37,7 +37,7 @@ function ItemDetail({ productDetail }) {
 
 
   return (
-    <BoxContainer key={productDetail.categoryId}>
+  <BoxContainer key={productDetail.id}>
       <Image src={productDetail.img_url} alt={productDetail.img_description}/>
       <StyledHeading>{productDetail.name}</StyledHeading>
       <StyledParagraph>{productDetail.price}</StyledParagraph>
@@ -45,7 +45,7 @@ function ItemDetail({ productDetail }) {
       <ItemCount stock={productDetail.stock} initial={0} />
       <StyledButton>Volver</StyledButton>
       <StyledParagraphBox> {`${productDetail.stock} unidades restantes`}</StyledParagraphBox>
-    </BoxContainer>
+    </BoxContainer> 
   );
 }
 

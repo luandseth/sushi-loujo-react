@@ -28,8 +28,8 @@ function ItemList({ items }) {
       <StyledUl>
         {items.map((item) => 
         <Item
-            id={item.categoryId}
-            key={item.categoryId}
+            key={item.id}
+            id={item.id}
             title={item.name}
             description={item.description}
             price={item.price}

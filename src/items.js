@@ -1,15 +1,16 @@
-const object = [
-    {
-        categoryId:'rolls',
+const products = [
+    {   id: 0,
+        category:'rolls',
         name:'Rolls',
         description:'Rolls de Salmon, Kanikama, Vegetarianos y muchos más',
         price:"$350",
         img_url:'https://sushiloujo.com.ar/resources/img/roll.jpg',
         img_description:'Sushi-rolls',
-        stock:10,
+        stock:2,
     },
     {
-        categoryId:'makis',
+        id: 1,
+        category:'makis',
         name:'Makis',
         description:'Makis de Salmon, Kanikama, Vegetarianos y muchos más',
         price:"$400",
@@ -18,7 +19,8 @@ const object = [
         stock:12,
     },
     {
-        categoryId:'hotrolls',
+        id: 2,
+        category:'hot-rolls',
         name:'Hot Rolls',
         description:'Hot Rolls de Salmon, Kanikama, Vegetarianos y muchos más',
         price:"$500",
@@ -31,21 +33,27 @@ const object = [
 
 function getItems(){
     return new Promise((resolve,reject) =>{
-        
-        setTimeout(() => resolve(object), 2000)
+        setTimeout(() => resolve(products), 2000);
     })
 }
 
-function getItem(categoryId){
+function getItem(id){
     return new Promise((resolve,reject) =>{
-        setTimeout(() => resolve(object[categoryId]), 2000)
+        const product = products.find( product => product.id === parseInt(id));
+        setTimeout(() => resolve(product), 1000);
     })
 }
 
-
+function getCategory(category){
+    return new Promise((resolve,reject) =>{
+        const product = products.filter(product => product === category)
+        setTimeout(() => resolve(product),2000); 
+    })
+}
 
 
 module.exports = {
     getItems: getItems,
     getItem: getItem,
+    getCategory: getCategory,
 };
