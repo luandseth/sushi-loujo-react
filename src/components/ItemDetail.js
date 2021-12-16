@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ItemCount from "./ItemCount";
+
 
 
 const BoxContainer = styled.div`
@@ -41,10 +43,6 @@ const StyledButton = styled.button`
     margin: 10px;
 `
 
-const Anchor = styled.a`
-  padding-left: 25px;
-`
-
 function ItemDetail({ productDetail }) {
 
 
@@ -57,7 +55,7 @@ function ItemDetail({ productDetail }) {
       <ItemCount stock={productDetail.stock} initial={0} />
       <Container>
         <StyledButton>Volver</StyledButton>
-        <StyledParagraph><Anchor href="/cart"><img src={"https://icongr.am/entypo/shopping-cart.svg?size=30&color=000000"} alt="carrito de compras"/></Anchor></StyledParagraph>
+        <StyledParagraph><Link to="/cart"><img src={"https://icongr.am/entypo/shopping-cart.svg?size=30&color=000000"} alt="carrito de compras"/></Link></StyledParagraph>
       </Container>
       <StyledParagraphBox> {`${productDetail.stock} unidades restantes`}</StyledParagraphBox>
     </BoxContainer> 
