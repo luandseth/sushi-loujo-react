@@ -29,12 +29,12 @@ function NavBar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/category/${categoryId}`}>
+              <Link className="nav-link" to={`/category/:categoryId`}>
                 Productos
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/category/${categoryId}`}>
+              <Link className="nav-link" to={`/category/:categoryId`}>
                 Delivery
               </Link>
             </li>
