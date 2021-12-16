@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import ItemCount from "./ItemCount";
+
 
 const BoxContainer = styled.div`
   width: 50%;
@@ -11,6 +12,13 @@ const BoxContainer = styled.div`
   border: 1px solid gray;
 
 `;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+`
 
 const Image = styled.img`
     width: 250px;
@@ -33,6 +41,10 @@ const StyledButton = styled.button`
     margin: 10px;
 `
 
+const Anchor = styled.a`
+  padding-left: 25px;
+`
+
 function ItemDetail({ productDetail }) {
 
 
@@ -43,7 +55,10 @@ function ItemDetail({ productDetail }) {
       <StyledParagraph>{productDetail.price}</StyledParagraph>
       <StyledParagraph>{productDetail.description}</StyledParagraph>
       <ItemCount stock={productDetail.stock} initial={0} />
-      <StyledButton>Volver</StyledButton>
+      <Container>
+        <StyledButton>Volver</StyledButton>
+        <StyledParagraph><Anchor href="/cart"><img src={"https://icongr.am/entypo/shopping-cart.svg?size=30&color=000000"} alt="carrito de compras"/></Anchor></StyledParagraph>
+      </Container>
       <StyledParagraphBox> {`${productDetail.stock} unidades restantes`}</StyledParagraphBox>
     </BoxContainer> 
   );
